@@ -1,9 +1,9 @@
 <script setup></script>
 
 <template>
-  <div class="grid grid-cols-4 gap-4 items-center">
+  <div class="grid grid-cols-5 gap-2 items-center">
     <!-- selected -->
-    <div class="col-span-2">
+    <div class="pl-5 col-span-2">
       <label
         for="Date"
         class="block mb-2 text-sm font-medium text-gray-900 dark:text-white"
@@ -20,7 +20,7 @@
     </div>
 
     <!-- time -->
-    <div class="pt-6 col-start-2">
+    <div class="pt-6">
       <select
         id="Time"
         class="bg-gray-50 border border-gray-300 text-gray-900 text-sm focus:ring-blue-500 focus:border-blue-500 block w-1/3 p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
@@ -28,10 +28,11 @@
         <option selected>Time</option>
       </select>
     </div>
-    <div class="grid grid-cols-6 gap-2 justify-self-center pt-6">
+
+    <div class="col-span-2 grid grid-cols-6 gap-0 justify-self-center pt-6">
       <!-- clock -->
       <div>
-        <img src="clock.png" />
+        <img src="clock.png" class="w-8 h-8" />
       </div>
       <!-- minutes -->
       <div class="col-span-2">
@@ -60,11 +61,11 @@
       </div>
 
       <div class="justify-self-center">
-        <p class="text-2xl text-green-700">:</p>
+        <p class="text-2xl text-center text-green-700">:</p>
       </div>
 
       <!-- seconds -->
-      <div>
+      <div class="pr-8">
         <select
           id="Time"
           class="bg-gray-50 border border-gray-300 text-gray-900 text-sm focus:ring-blue-500 focus:border-blue-500 block w-1/3 p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"

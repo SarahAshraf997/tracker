@@ -8,7 +8,7 @@ import Time from "./components/Time.vue";
 
 <template>
   <lougoo></lougoo>
-  <Time></Time>
+
   <navBar></navBar>
 
   <!-- <HelloWorld msg="Vite + Vue" /> -->
