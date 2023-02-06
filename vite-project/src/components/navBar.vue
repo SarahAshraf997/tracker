@@ -2,6 +2,7 @@
 import { reactive } from "vue";
 import inputForm from "./inputForm.vue";
 import Time from "./Time.vue";
+import container from "./container.vue";
 let state = reactive({
   stringDay: "",
 });
@@ -399,6 +400,9 @@ function GetSelectedDate(event) {
               </div>
               <div class="pt-10 w-3/5">
                 <Time :selectedDay="state.stringDay"></Time>
+              </div>
+              <div class="pt-10 w-3/5">
+                <container></container>
               </div>
             </div>
             <!-- </div> -->
