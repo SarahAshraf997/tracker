@@ -402,7 +402,7 @@ function GetSelectedDate(event) {
                 <Time :selectedDay="state.stringDay"></Time>
               </div>
               <div class="pt-10 w-3/5">
-                <container></container>
+                <container :selectedDate="state.stringDay"></container>
               </div>
             </div>
             <!-- </div> -->

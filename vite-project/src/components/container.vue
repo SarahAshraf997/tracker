@@ -1,15 +1,24 @@
-<script setup></script>
+<script setup>
+import { stringify } from "postcss";
+
+defineProps({
+  selectedDate: String,
+});
+</script>
 <template>
-  <div class="bg-slate-500">
+  <div class="bg-gray-300">
     <div class="grid grid-cols-5 gap-4">
       <!-- first paragraph -->
       <div class="col-span-2">
         <p class="text-blue-700 font-serif">The next date has been set:</p>
+        <p v-if="selectedDate != null" class="text-gray-400">
+          At 4:30 on {{ selectedDate }}
+        </p>
       </div>
 
       <!-- right sign -->
       <div>
-        <img src="right.png" class="w-9 h-9" />
+        <img src="checked-png-7.png" class="w-9 h-9" />
       </div>
 
       <!-- second paragraph -->
