@@ -6,7 +6,7 @@ defineProps({
 });
 </script>
 <template>
-  <div class="bg-gray-300">
+  <div class="bg-gray-100 w-3/5">
     <div class="grid grid-cols-5 gap-4">
       <!-- first paragraph -->
       <div class="col-span-2">
