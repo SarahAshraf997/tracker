@@ -2,7 +2,14 @@
 import inputForm from "./inputForm.vue";
 
 function GetSelectedDate(event) {
-  console.log(event);
+  //prints datetime attribute of time tag
+  //console.log(event.target.children[0].getAttribute("datetime"));
+  console.log(event.target);
+  if (event.target.getAttribute("datetime") == null) {
+    alert(event.target.children[0].getAttribute("datetime"));
+  } else {
+    alert(event.target.getAttribute("datetime"));
+  }
 }
 </script>
 <template>
@@ -88,6 +95,7 @@ function GetSelectedDate(event) {
                       <button
                         type="button"
                         class="text-gray-900 hover:bg-gray-200 mx-auto flex h-8 w-8 items-center justify-center rounded-full"
+                        @click="GetSelectedDate"
                       >
                         <time datetime="2023-02-02">2</time>
                       </button>
@@ -97,6 +105,7 @@ function GetSelectedDate(event) {
                       <button
                         type="button"
                         class="text-gray-900 hover:bg-gray-200 mx-auto flex h-8 w-8 items-center justify-center rounded-full"
+                        @click="GetSelectedDate"
                       >
                         <time datetime="2023-02-03">3</time>
                       </button>
@@ -106,6 +115,7 @@ function GetSelectedDate(event) {
                       <button
                         type="button"
                         class="text-gray-900 hover:bg-gray-200 mx-auto flex h-8 w-8 items-center justify-center rounded-full"
+                        @click="GetSelectedDate"
                       >
                         <time datetime="2023-02-04">4</time>
                       </button>
@@ -115,6 +125,7 @@ function GetSelectedDate(event) {
                       <button
                         type="button"
                         class="text-gray-900 hover:bg-gray-200 mx-auto flex h-8 w-8 items-center justify-center rounded-full"
+                        @click="GetSelectedDate"
                       >
                         <time datetime="2023-02-05">5</time>
                       </button>
@@ -125,6 +136,7 @@ function GetSelectedDate(event) {
                       <button
                         type="button"
                         class="text-black bg-cyan-500 font-semibold mx-auto flex h-8 w-8 items-center justify-center rounded-full"
+                        @click="GetSelectedDate"
                       >
                         <time datetime="2023-02-06">6</time>
                       </button>
@@ -134,6 +146,7 @@ function GetSelectedDate(event) {
                       <button
                         type="button"
                         class="text-gray-900 hover:bg-gray-200 mx-auto flex h-8 w-8 items-center justify-center rounded-full"
+                        @click="GetSelectedDate"
                       >
                         <time datetime="2023-02-07">7</time>
                       </button>
@@ -143,6 +156,7 @@ function GetSelectedDate(event) {
                       <button
                         type="button"
                         class="text-gray-900 hover:bg-gray-200 mx-auto flex h-8 w-8 items-center justify-center rounded-full"
+                        @click="GetSelectedDate"
                       >
                         <time datetime="2023-02-08">8</time>
                       </button>
@@ -152,6 +166,7 @@ function GetSelectedDate(event) {
                       <button
                         type="button"
                         class="text-gray-900 hover:bg-gray-200 mx-auto flex h-8 w-8 items-center justify-center rounded-full"
+                        @click="GetSelectedDate"
                       >
                         <time datetime="2023-02-09">9</time>
                       </button>
@@ -161,6 +176,7 @@ function GetSelectedDate(event) {
                       <button
                         type="button"
                         class="text-gray-900 hover:bg-gray-200 mx-auto flex h-8 w-8 items-center justify-center rounded-full"
+                        @click="GetSelectedDate"
                       >
                         <time datetime="2023-02-10">10</time>
                       </button>
@@ -170,6 +186,7 @@ function GetSelectedDate(event) {
                       <button
                         type="button"
                         class="text-gray-900 hover:bg-gray-200 mx-auto flex h-8 w-8 items-center justify-center rounded-full"
+                        @click="GetSelectedDate"
                       >
                         <time datetime="2023-02-11">11</time>
                       </button>
@@ -179,6 +196,7 @@ function GetSelectedDate(event) {
                       <button
                         type="button"
                         class="text-gray-900 hover:bg-gray-200 mx-auto flex h-8 w-8 items-center justify-center rounded-full"
+                        @click="GetSelectedDate"
                       >
                         <time datetime="2023-02-12">12</time>
                       </button>
@@ -188,6 +206,7 @@ function GetSelectedDate(event) {
                       <button
                         type="button"
                         class="text-gray-900 hover:bg-gray-200 mx-auto flex h-8 w-8 items-center justify-center rounded-full"
+                        @click="GetSelectedDate"
                       >
                         <time datetime="2023-02-13">13</time>
                       </button>
@@ -197,6 +216,7 @@ function GetSelectedDate(event) {
                       <button
                         type="button"
                         class="text-gray-900 hover:bg-gray-200 mx-auto flex h-8 w-8 items-center justify-center rounded-full"
+                        @click="GetSelectedDate"
                       >
                         <time datetime="2023-02-14">14</time>
                       </button>
@@ -206,6 +226,7 @@ function GetSelectedDate(event) {
                       <button
                         type="button"
                         class="text-gray-900 hover:bg-gray-200 mx-auto flex h-8 w-8 items-center justify-center rounded-full"
+                        @click="GetSelectedDate"
                       >
                         <time datetime="2023-02-15">15</time>
                       </button>
@@ -215,6 +236,7 @@ function GetSelectedDate(event) {
                       <button
                         type="button"
                         class="text-gray-900 hover:bg-gray-200 mx-auto flex h-8 w-8 items-center justify-center rounded-full"
+                        @click="GetSelectedDate"
                       >
                         <time datetime="2023-02-16">16</time>
                       </button>
@@ -224,6 +246,7 @@ function GetSelectedDate(event) {
                       <button
                         type="button"
                         class="text-gray-900 hover:bg-gray-200 mx-auto flex h-8 w-8 items-center justify-center rounded-full"
+                        @click="GetSelectedDate"
                       >
                         <time datetime="2023-02-17">17</time>
                       </button>
@@ -233,6 +256,7 @@ function GetSelectedDate(event) {
                       <button
                         type="button"
                         class="text-gray-900 hover:bg-gray-200 mx-auto flex h-8 w-8 items-center justify-center rounded-full"
+                        @click="GetSelectedDate"
                       >
                         <time datetime="2023-02-18">18</time>
                       </button>
@@ -242,6 +266,7 @@ function GetSelectedDate(event) {
                       <button
                         type="button"
                         class="text-gray-900 hover:bg-gray-200 mx-auto flex h-8 w-8 items-center justify-center rounded-full"
+                        @click="GetSelectedDate"
                       >
                         <time datetime="2023-02-19">19</time>
                       </button>
@@ -251,6 +276,7 @@ function GetSelectedDate(event) {
                       <button
                         type="button"
                         class="text-gray-900 hover:bg-gray-200 mx-auto flex h-8 w-8 items-center justify-center rounded-full"
+                        @click="GetSelectedDate"
                       >
                         <time datetime="2023-02-20">20</time>
                       </button>
@@ -260,6 +286,7 @@ function GetSelectedDate(event) {
                       <button
                         type="button"
                         class="text-gray-900 hover:bg-gray-200 mx-auto flex h-8 w-8 items-center justify-center rounded-full"
+                        @click="GetSelectedDate"
                       >
                         <time datetime="2023-02-21">21</time>
                       </button>
@@ -269,6 +296,7 @@ function GetSelectedDate(event) {
                       <button
                         type="button"
                         class="text-gray-900 hover:bg-gray-200 mx-auto flex h-8 w-8 items-center justify-center rounded-full"
+                        @click="GetSelectedDate"
                       >
                         <time datetime="2023-02-22">22</time>
                       </button>
@@ -278,6 +306,7 @@ function GetSelectedDate(event) {
                       <button
                         type="button"
                         class="text-gray-900 hover:bg-gray-200 mx-auto flex h-8 w-8 items-center justify-center rounded-full"
+                        @click="GetSelectedDate"
                       >
                         <time datetime="2023-02-23">23</time>
                       </button>
@@ -287,6 +316,7 @@ function GetSelectedDate(event) {
                       <button
                         type="button"
                         class="text-gray-900 hover:bg-gray-200 mx-auto flex h-8 w-8 items-center justify-center rounded-full"
+                        @click="GetSelectedDate"
                       >
                         <time datetime="2023-02-24">24</time>
                       </button>
@@ -296,6 +326,7 @@ function GetSelectedDate(event) {
                       <button
                         type="button"
                         class="text-gray-900 hover:bg-gray-200 mx-auto flex h-8 w-8 items-center justify-center rounded-full"
+                        @click="GetSelectedDate"
                       >
                         <time datetime="2023-02-25">25</time>
                       </button>
@@ -305,6 +336,7 @@ function GetSelectedDate(event) {
                       <button
                         type="button"
                         class="text-gray-900 hover:bg-gray-200 mx-auto flex h-8 w-8 items-center justify-center rounded-full"
+                        @click="GetSelectedDate"
                       >
                         <time datetime="2023-02-26">26</time>
                       </button>
@@ -314,6 +346,7 @@ function GetSelectedDate(event) {
                       <button
                         type="button"
                         class="text-gray-900 hover:bg-gray-200 mx-auto flex h-8 w-8 items-center justify-center rounded-full"
+                        @click="GetSelectedDate"
                       >
                         <time datetime="2023-02-27">27</time>
                       </button>
@@ -323,6 +356,7 @@ function GetSelectedDate(event) {
                       <button
                         type="button"
                         class="text-gray-900 hover:bg-gray-200 mx-auto flex h-8 w-8 items-center justify-center rounded-full"
+                        @click="GetSelectedDate"
                       >
                         <time datetime="2023-02-28">28</time>
                       </button>
