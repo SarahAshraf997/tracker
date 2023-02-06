@@ -1,18 +1,20 @@
 <script setup>
+import { reactive } from "vue";
 import inputForm from "./inputForm.vue";
 import Time from "./Time.vue";
-
+let state = reactive({
+  stringDay: "",
+});
 function GetSelectedDate(event) {
   //prints datetime attribute of time tag
   //console.log(event.target.children[0].getAttribute("datetime"));
-  let stringPrint;
   console.log(event.target);
   if (event.target.getAttribute("datetime") == null) {
-    stringPrint = event.target.children[0].getAttribute("datetime");
-    alert(event.target.children[0].getAttribute("datetime"));
+    state.stringDay = event.target.children[0].getAttribute("datetime");
+    //alert(event.target.children[0].getAttribute("datetime"));
   } else {
-    stringPrint = event.target.getAttribute("datetime");
-    alert(event.target.getAttribute("datetime"));
+    state.stringDay = event.target.getAttribute("datetime");
+    //alert(event.target.getAttribute("datetime"));
   }
 }
 </script>
@@ -396,7 +398,7 @@ function GetSelectedDate(event) {
                 </div>
               </div>
               <div class="pt-10 w-3/5">
-                <Time></Time>
+                <Time :selectedDay="state.stringDay"></Time>
               </div>
             </div>
             <!-- </div> -->
