@@ -15,6 +15,9 @@ module.exports = {
           "0 45px 65px rgba(0, 0, 0, 0.15)",
         ],
       },
+      colors: {
+        // Configure your color palette here
+      },
     },
   },
   plugins: [require("flowbite/plugin")],
