@@ -1,13 +1,17 @@
 <script setup>
 import inputForm from "./inputForm.vue";
+import Time from "./Time.vue";
 
 function GetSelectedDate(event) {
   //prints datetime attribute of time tag
   //console.log(event.target.children[0].getAttribute("datetime"));
+  let stringPrint;
   console.log(event.target);
   if (event.target.getAttribute("datetime") == null) {
+    stringPrint = event.target.children[0].getAttribute("datetime");
     alert(event.target.children[0].getAttribute("datetime"));
   } else {
+    stringPrint = event.target.getAttribute("datetime");
     alert(event.target.getAttribute("datetime"));
   }
 }
@@ -50,33 +54,59 @@ function GetSelectedDate(event) {
                 <div>S</div>
               </div>
             </div>
+
             <!-- GRID OF DAYS -->
             <div
               class="mx-auto w-full px-0 ring-2 ring-gray-900 drop-shadow-xl bg-cyan-500 shadow-lg shadow-gray-900 rounded-t-lg rounded-b-lg"
             >
-              <div class="grid grid-cols-5 mt-0 gap-0 justify-items-stretch">
-                <div class="">
-                  <button
-                    type="button"
-                    class="bg-blue-900 -my-1.5 flex flex-none bg-gray-900 hover:bg-gray-200 items-center justify-center p-1.5 text-white hover:text-gray-500 rounded-full"
-                  >
-                    <span class="sr-only">Previous month</span
-                    ><svg
-                      xmlns="http://www.w3.org/2000/svg"
-                      viewBox="0 0 20 20"
-                      fill="currentColor"
-                      aria-hidden="true"
-                      class="w-5 h-5"
+              <div class="mt-0 gap-0 justify-items-stretch">
+                <div class="grid grid-cols-4 flex flex-col">
+                  <div class="justify-items-end">
+                    <button
+                      type="button"
+                      class="bg-blue-900 -my-1.5 flex flex-none bg-gray-900 hover:bg-gray-200 items-center justify-center p-1.5 text-white hover:text-gray-500 rounded-full"
                     >
-                      <path
-                        fill-rule="evenodd"
-                        d="M12.707 5.293a1 1 0 010 1.414L9.414 10l3.293 3.293a1 1 0 01-1.414 1.414l-4-4a1 1 0 010-1.414l4-4a1 1 0 011.414 0z"
-                        clip-rule="evenodd"
-                      ></path>
-                    </svg>
-                  </button>
+                      <span class="sr-only">Previous month</span
+                      ><svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        viewBox="0 0 20 20"
+                        fill="currentColor"
+                        aria-hidden="true"
+                        class="w-5 h-5"
+                      >
+                        <path
+                          fill-rule="evenodd"
+                          d="M12.707 5.293a1 1 0 010 1.414L9.414 10l3.293 3.293a1 1 0 01-1.414 1.414l-4-4a1 1 0 010-1.414l4-4a1 1 0 011.414 0z"
+                          clip-rule="evenodd"
+                        ></path>
+                      </svg>
+                    </button>
+                  </div>
+                  <div></div>
+                  <div></div>
+                  <div class="justify-items-end">
+                    <button
+                      type="button"
+                      class="bg-blue-900 flex flex-none p-1.5 text-white hover:text-gray-500 rounded-full"
+                    >
+                      <span class="sr-only">Next month</span
+                      ><svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        viewBox="0 0 20 20"
+                        fill="currentColor"
+                        aria-hidden="true"
+                        class="w-5 h-5"
+                      >
+                        <path
+                          fill-rule="evenodd"
+                          d="M7.293 14.707a1 1 0 010-1.414L10.586 10 7.293 6.707a1 1 0 011.414-1.414l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414 0z"
+                          clip-rule="evenodd"
+                        ></path>
+                      </svg>
+                    </button>
+                  </div>
                 </div>
-                <div class="col-span-3 justify-self-center">
+                <div class="justify-self-center">
                   <div class="grid grid-cols-7 mt-2 text-sm">
                     <!-- start col m4 48ala -->
                     <div class="col-start-4 py-1.5">
@@ -364,28 +394,9 @@ function GetSelectedDate(event) {
                     </div>
                   </div>
                 </div>
-
-                <div class="self-end pl-90">
-                  <button
-                    type="button"
-                    class="bg-blue-900 -my-1.5 -mr-1.5 ml-2 flex flex-none items-center justify-center p-1.5 text-white hover:text-gray-500 rounded-full"
-                  >
-                    <span class="sr-only">Next month</span
-                    ><svg
-                      xmlns="http://www.w3.org/2000/svg"
-                      viewBox="0 0 20 20"
-                      fill="currentColor"
-                      aria-hidden="true"
-                      class="w-5 h-5"
-                    >
-                      <path
-                        fill-rule="evenodd"
-                        d="M7.293 14.707a1 1 0 010-1.414L10.586 10 7.293 6.707a1 1 0 011.414-1.414l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414 0z"
-                        clip-rule="evenodd"
-                      ></path>
-                    </svg>
-                  </button>
-                </div>
+              </div>
+              <div class="pt-10 w-3/5">
+                <Time></Time>
               </div>
             </div>
             <!-- </div> -->
