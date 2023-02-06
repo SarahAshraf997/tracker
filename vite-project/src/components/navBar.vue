@@ -1,8 +1,8 @@
 <script setup>
 import inputForm from "./inputForm.vue";
 
-function GetSelectedDate(date) {
-  console.log(date);
+function GetSelectedDate(event) {
+  console.log(event);
 }
 </script>
 <template>
@@ -75,8 +75,8 @@ function GetSelectedDate(date) {
                     <div class="col-start-4 py-1.5">
                       <button
                         type="button"
-                        @click="GetSelectedDate($event.target)"
                         class="text-gray-900 hover:bg-gray-200 mx-auto flex h-8 w-8 items-center justify-center rounded-full"
+                        @click="GetSelectedDate"
                       >
                         <time datetime="2023-02-01">1</time>
                       </button>

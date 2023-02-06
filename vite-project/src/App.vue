@@ -3,11 +3,12 @@ import HelloWorld from "./components/HelloWorld.vue";
 import navBar from "./components/navBar.vue";
 import lougoo from "./components/lougoo.vue";
 import inputForm from "./components/inputForm.vue";
+import Time from "./components/Time.vue";
 </script>
 
 <template>
   <lougoo></lougoo>
-
+  <Time></Time>
   <navBar></navBar>
 
   <!-- <HelloWorld msg="Vite + Vue" /> -->
