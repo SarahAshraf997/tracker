@@ -1,6 +1,4 @@
 <script setup>
-import { stringify } from "postcss";
-
 defineProps({
   selectedDate: String,
 });
@@ -11,13 +9,13 @@ defineProps({
       <!-- first paragraph -->
       <div class="col-span-2">
         <p class="text-blue-700 font-serif">The next date has been set:</p>
-        <p v-if="selectedDate != null" class="text-gray-400">
+        <p v-if="selectedDate.length > 0" class="text-gray-400">
           At 4:30 on {{ selectedDate }}
         </p>
       </div>
 
       <!-- right sign -->
-      <div>
+      <div class="mx-0">
         <img src="checked-png-7.png" class="w-9 h-9" />
       </div>
 
