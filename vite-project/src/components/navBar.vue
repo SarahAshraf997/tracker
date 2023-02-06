@@ -20,9 +20,9 @@ function GetSelectedDate(event) {
 }
 </script>
 <template>
-  <div class="flex pt-16 pb-8 m-8">
+  <div class="flex justify-center pt-16 pb-8 m-8">
     <div
-      class="mx-auto w-1/2 px-4 ring-2 ring-gray-900 drop-shadow-xl bg-cyan-500 shadow-lg shadow-gray-900 rounded-t-lg rounded-b-lg"
+      class="w-2/3 px-4 ring-2 ring-gray-900 drop-shadow-xl bg-cyan-500 shadow-lg shadow-gray-900 rounded-t-lg rounded-b-lg"
     >
       <div class="pt-16 px-16">
         <inputForm></inputForm>
@@ -401,7 +401,7 @@ function GetSelectedDate(event) {
               <div class="pt-10 w-3/5">
                 <Time :selectedDay="state.stringDay"></Time>
               </div>
-              <div class="pt-10 w-3/5">
+              <div class="pt-10 w-2/5 flex">
                 <container :selectedDate="state.stringDay"></container>
               </div>
             </div>
