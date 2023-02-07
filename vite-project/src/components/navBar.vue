@@ -22,31 +22,33 @@ function GetSelectedDate(event) {
 <template>
   <div class="flex justify-center pt-16 pb-8 m-8">
     <div
-      class="w-2/3 px-4 ring-2 ring-gray-900 drop-shadow-xl bg-cyan-500 shadow-lg shadow-gray-900 rounded-t-lg rounded-b-lg"
+      class="w-1/2 px-4 ring-2 ring-gray-900 drop-shadow-xl bg-cyan-500 shadow-lg shadow-gray-900 rounded-t-lg rounded-b-lg"
     >
-      <div class="pt-16 px-16">
+      <div class="pt-16 px-10">
         <inputForm></inputForm>
       </div>
 
       <div class="pt-16 pb-8">
         <div
-          class="w-2/3 px-4 sm:px-7 md:max-w-4xl md:px-6 flex items-center justify-center"
+          class="w-2/3 px-4 sm:px-7 items-center justify-center grid grid-rows-3 grid-flow-col gap-4"
         >
           <!-- <div class="grid grid-cols-1 divide-y divide-gray-200 w-full p-8"> -->
-          <div class="w-2/3">
+          <div class="w-full">
             <!-- feb+buttons -->
 
             <div class="flex items-center">
-              <h2 class="flex-auto font-semibold text-gray-900">
-                February 2023
+              <h2
+                class="flex-auto font-serif font-semibold text-gray-500 text-center mb-3 text-xl"
+              >
+                What Time Works?
               </h2>
             </div>
             <!-- days at the top -->
             <div
-              class="w-full px-4 ring-2 ring-gray-900 drop-shadow-xl bg-grey-500 shadow-lg shadow-gray-900 rounded-t-lg rounded-b-lg"
+              class="w-full px-4 ring-2 ring-gray-900 drop-shadow-xl bg-blue-900 shadow-lg shadow-gray-900 rounded-t-lg rounded-b-lg"
             >
               <div
-                class="grid bg-blue-900 grid-cols-7 mt-10 text-xs leading-6 text-center text-white"
+                class="grid bg-blue-900 grid-cols-7 mt-5 text-xs leading-6 text-center text-white"
               >
                 <div>S</div>
                 <div>M</div>
@@ -110,7 +112,9 @@ function GetSelectedDate(event) {
                   </div>
                 </div>
                 <div class="justify-self-center">
-                  <div class="grid grid-cols-7 mt-2 text-sm">
+                  <div
+                    class="grid grid-cols-7 mt-2 text-sm text-xs leading-6 text-center"
+                  >
                     <!-- start col m4 48ala -->
                     <div class="col-start-4 py-1.5">
                       <button
@@ -411,8 +415,25 @@ function GetSelectedDate(event) {
               <!-- <h2 class="font-semibold text-gray-900">"Schedule for"</h2> -->
             </section>
           </div>
+          <!-- buttonSubmit -->
+          <div class="grid grid-cols-4 gap-4">
+            <div></div>
+            <div class="col-span-2 pt-10">
+              <button
+                type="submit"
+                class="justify-self-center w-full ocus:outline-none text-white bg-green-700 hover:bg-green-800 focus:ring-4 focus:ring-green-300 font-medium rounded-lg text-sm px-5 py-3.5 mr-2 mb-2 dark:bg-green-600 dark:hover:bg-green-700 dark:focus:ring-green-800"
+              >
+                Register new account
+              </button>
+            </div>
+          </div>
         </div>
       </div>
     </div>
   </div>
 </template>
+<style>
+body {
+  margin-right: 0;
+}
+</style>
