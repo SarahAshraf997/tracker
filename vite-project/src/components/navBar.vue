@@ -29,9 +29,7 @@ function GetSelectedDate(event) {
       </div>
 
       <div class="pt-16 pb-8">
-        <div
-          class="w-2/3 px-4 sm:px-7 items-center justify-center grid grid-rows-3 grid-flow-col gap-4"
-        >
+        <div class="w-2/3 px-4 sm:px-7 grid grid-rows-3 grid-flow-col gap-4">
           <!-- <div class="grid grid-cols-1 divide-y divide-gray-200 w-full p-8"> -->
           <div class="w-full">
             <!-- feb+buttons -->
@@ -65,58 +63,52 @@ function GetSelectedDate(event) {
               class="w-full px-0 ring-2 ring-gray-900 drop-shadow-xl bg-cyan-500 shadow-lg shadow-gray-900 rounded-t-lg rounded-b-lg"
             >
               <div class="mt-0 gap-0 justify-items-stretch">
-                <div class="grid grid-cols-4 flex flex-col">
-                  <div class="justify-items-end">
-                    <button
-                      type="button"
-                      class="bg-blue-900 -my-1.5 flex flex-none bg-gray-900 hover:bg-gray-200 items-center justify-center p-1.5 text-white hover:text-gray-500 rounded-full"
+                <div class="flex justify-between pt-3">
+                  <button
+                    type="button"
+                    class="bg-blue-900 -my-1.5 flex flex-none bg-gray-900 hover:bg-gray-200 items-center justify-center p-1.5 text-white hover:text-gray-500 rounded-full"
+                  >
+                    <span class="sr-only">Previous month</span
+                    ><svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      viewBox="0 0 20 20"
+                      fill="currentColor"
+                      aria-hidden="true"
+                      class="w-5 h-5"
                     >
-                      <span class="sr-only">Previous month</span
-                      ><svg
-                        xmlns="http://www.w3.org/2000/svg"
-                        viewBox="0 0 20 20"
-                        fill="currentColor"
-                        aria-hidden="true"
-                        class="w-5 h-5"
-                      >
-                        <path
-                          fill-rule="evenodd"
-                          d="M12.707 5.293a1 1 0 010 1.414L9.414 10l3.293 3.293a1 1 0 01-1.414 1.414l-4-4a1 1 0 010-1.414l4-4a1 1 0 011.414 0z"
-                          clip-rule="evenodd"
-                        ></path>
-                      </svg>
-                    </button>
-                  </div>
-                  <div></div>
-                  <div></div>
-                  <div class="justify-items-end">
-                    <button
-                      type="button"
-                      class="bg-blue-900 flex flex-none p-1.5 text-white hover:text-gray-500 rounded-full"
+                      <path
+                        fill-rule="evenodd"
+                        d="M12.707 5.293a1 1 0 010 1.414L9.414 10l3.293 3.293a1 1 0 01-1.414 1.414l-4-4a1 1 0 010-1.414l4-4a1 1 0 011.414 0z"
+                        clip-rule="evenodd"
+                      ></path>
+                    </svg>
+                  </button>
+                  <button
+                    type="button"
+                    class="bg-blue-900 -my-1.5 flex flex-none bg-gray-900 hover:bg-gray-200 items-center justify-center p-1.5 text-white hover:text-gray-500 rounded-full"
+                  >
+                    <span class="sr-only">Next month</span
+                    ><svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      viewBox="0 0 20 20"
+                      fill="currentColor"
+                      aria-hidden="true"
+                      class="w-5 h-5"
                     >
-                      <span class="sr-only">Next month</span
-                      ><svg
-                        xmlns="http://www.w3.org/2000/svg"
-                        viewBox="0 0 20 20"
-                        fill="currentColor"
-                        aria-hidden="true"
-                        class="w-5 h-5"
-                      >
-                        <path
-                          fill-rule="evenodd"
-                          d="M7.293 14.707a1 1 0 010-1.414L10.586 10 7.293 6.707a1 1 0 011.414-1.414l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414 0z"
-                          clip-rule="evenodd"
-                        ></path>
-                      </svg>
-                    </button>
-                  </div>
+                      <path
+                        fill-rule="evenodd"
+                        d="M7.293 14.707a1 1 0 010-1.414L10.586 10 7.293 6.707a1 1 0 011.414-1.414l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414 0z"
+                        clip-rule="evenodd"
+                      ></path>
+                    </svg>
+                  </button>
                 </div>
                 <div class="justify-self-center">
                   <div
                     class="grid grid-cols-7 mt-2 text-sm text-xs leading-6 text-center"
                   >
                     <!-- start col m4 48ala -->
-                    <div class="col-start-4 py-1.5">
+                    <div class="py-1.5 flex justify-center items-center">
                       <button
                         type="button"
                         class="text-gray-900 hover:bg-gray-200 flex h-8 w-8 items-center justify-center rounded-full"
@@ -128,7 +120,7 @@ function GetSelectedDate(event) {
                         class="w-1 h-1 mt-1 __web-inspector-hide-shortcut__"
                       ></div>
                     </div>
-                    <div class="py-1.5">
+                    <div class="py-1.5 flex justify-center items-center">
                       <button
                         type="button"
                         class="text-gray-900 hover:bg-gray-200 flex h-8 w-8 items-center justify-center rounded-full"
@@ -138,7 +130,7 @@ function GetSelectedDate(event) {
                       </button>
                       <div class="w-1 h-1 mt-1"></div>
                     </div>
-                    <div class="py-1.5">
+                    <div class="py-1.5 flex justify-center items-center">
                       <button
                         type="button"
                         class="text-gray-900 hover:bg-gray-200 flex h-8 w-8 items-center justify-center rounded-full"
@@ -148,7 +140,7 @@ function GetSelectedDate(event) {
                       </button>
                       <div class="w-1 h-1 mt-1"></div>
                     </div>
-                    <div class="py-1.5">
+                    <div class="py-1.5 flex justify-center items-center">
                       <button
                         type="button"
                         class="text-gray-900 hover:bg-gray-200 flex h-8 w-8 items-center justify-center rounded-full"
@@ -158,7 +150,7 @@ function GetSelectedDate(event) {
                       </button>
                       <div class="w-1 h-1 mt-1"></div>
                     </div>
-                    <div class="py-1.5">
+                    <div class="py-1.5 flex justify-center items-center">
                       <button
                         type="button"
                         class="text-gray-900 hover:bg-gray-200 flex h-8 w-8 items-center justify-center rounded-full"
@@ -168,7 +160,7 @@ function GetSelectedDate(event) {
                       </button>
                       <div class="w-1 h-1 mt-1"></div>
                     </div>
-                    <div class="py-1.5">
+                    <div class="py-1.5 flex justify-center items-center">
                       <!-- background change -->
                       <button
                         type="button"
@@ -179,7 +171,7 @@ function GetSelectedDate(event) {
                       </button>
                       <div class="w-1 h-1 mt-1"></div>
                     </div>
-                    <div class="py-1.5">
+                    <div class="py-1.5 flex justify-center items-center">
                       <button
                         type="button"
                         class="text-gray-900 hover:bg-gray-200 flex h-8 w-8 items-center justify-center rounded-full"
@@ -189,7 +181,7 @@ function GetSelectedDate(event) {
                       </button>
                       <div class="w-1 h-1 mt-1"></div>
                     </div>
-                    <div class="py-1.5">
+                    <div class="py-1.5 flex justify-center items-center">
                       <button
                         type="button"
                         class="text-gray-900 hover:bg-gray-200 flex h-8 w-8 items-center justify-center rounded-full"
@@ -199,7 +191,7 @@ function GetSelectedDate(event) {
                       </button>
                       <div class="w-1 h-1 mt-1"></div>
                     </div>
-                    <div class="py-1.5">
+                    <div class="py-1.5 flex justify-center items-center">
                       <button
                         type="button"
                         class="text-gray-900 hover:bg-gray-200 flex h-8 w-8 items-center justify-center rounded-full"
@@ -209,7 +201,7 @@ function GetSelectedDate(event) {
                       </button>
                       <div class="w-1 h-1 mt-1"></div>
                     </div>
-                    <div class="py-1.5">
+                    <div class="py-1.5 flex justify-center items-center">
                       <button
                         type="button"
                         class="text-gray-900 hover:bg-gray-200 flex h-8 w-8 items-center justify-center rounded-full"
@@ -219,7 +211,7 @@ function GetSelectedDate(event) {
                       </button>
                       <div class="w-1 h-1 mt-1"></div>
                     </div>
-                    <div class="py-1.5">
+                    <div class="py-1.5 flex justify-center items-center">
                       <button
                         type="button"
                         class="text-gray-900 hover:bg-gray-200 flex h-8 w-8 items-center justify-center rounded-full"
@@ -229,7 +221,7 @@ function GetSelectedDate(event) {
                       </button>
                       <div class="w-1 h-1 mt-1"></div>
                     </div>
-                    <div class="py-1.5">
+                    <div class="py-1.5 flex justify-center items-center">
                       <button
                         type="button"
                         class="text-gray-900 hover:bg-gray-200 flex h-8 w-8 items-center justify-center rounded-full"
@@ -239,7 +231,7 @@ function GetSelectedDate(event) {
                       </button>
                       <div class="w-1 h-1 mt-1"></div>
                     </div>
-                    <div class="py-1.5">
+                    <div class="py-1.5 flex justify-center items-center">
                       <button
                         type="button"
                         class="text-gray-900 hover:bg-gray-200 flex h-8 w-8 items-center justify-center rounded-full"
@@ -249,7 +241,7 @@ function GetSelectedDate(event) {
                       </button>
                       <div class="w-1 h-1 mt-1"></div>
                     </div>
-                    <div class="py-1.5">
+                    <div class="py-1.5 flex justify-center items-center">
                       <button
                         type="button"
                         class="text-gray-900 hover:bg-gray-200 flex h-8 w-8 items-center justify-center rounded-full"
@@ -259,7 +251,7 @@ function GetSelectedDate(event) {
                       </button>
                       <div class="w-1 h-1 mt-1"></div>
                     </div>
-                    <div class="py-1.5">
+                    <div class="py-1.5 flex justify-center items-center">
                       <button
                         type="button"
                         class="text-gray-900 hover:bg-gray-200 flex h-8 w-8 items-center justify-center rounded-full"
@@ -269,7 +261,7 @@ function GetSelectedDate(event) {
                       </button>
                       <div class="w-1 h-1 mt-1"></div>
                     </div>
-                    <div class="py-1.5">
+                    <div class="py-1.5 flex justify-center items-center">
                       <button
                         type="button"
                         class="text-gray-900 hover:bg-gray-200 flex h-8 w-8 items-center justify-center rounded-full"
@@ -279,7 +271,7 @@ function GetSelectedDate(event) {
                       </button>
                       <div class="w-1 h-1 mt-1"></div>
                     </div>
-                    <div class="py-1.5">
+                    <div class="py-1.5 flex justify-center items-center">
                       <button
                         type="button"
                         class="text-gray-900 hover:bg-gray-200 flex h-8 w-8 items-center justify-center rounded-full"
@@ -289,7 +281,7 @@ function GetSelectedDate(event) {
                       </button>
                       <div class="w-1 h-1 mt-1"></div>
                     </div>
-                    <div class="py-1.5">
+                    <div class="py-1.5 flex justify-center items-center">
                       <button
                         type="button"
                         class="text-gray-900 hover:bg-gray-200 flex h-8 w-8 items-center justify-center rounded-full"
@@ -299,7 +291,7 @@ function GetSelectedDate(event) {
                       </button>
                       <div class="w-1 h-1 mt-1"></div>
                     </div>
-                    <div class="py-1.5">
+                    <div class="py-1.5 flex justify-center items-center">
                       <button
                         type="button"
                         class="text-gray-900 hover:bg-gray-200 flex h-8 w-8 items-center justify-center rounded-full"
@@ -309,7 +301,7 @@ function GetSelectedDate(event) {
                       </button>
                       <div class="w-1 h-1 mt-1"></div>
                     </div>
-                    <div class="py-1.5">
+                    <div class="py-1.5 flex justify-center items-center">
                       <button
                         type="button"
                         class="text-gray-900 hover:bg-gray-200 flex h-8 w-8 items-center justify-center rounded-full"
@@ -319,7 +311,7 @@ function GetSelectedDate(event) {
                       </button>
                       <div class="w-1 h-1 mt-1"></div>
                     </div>
-                    <div class="py-1.5">
+                    <div class="py-1.5 flex justify-center items-center">
                       <button
                         type="button"
                         class="text-gray-900 hover:bg-gray-200 flex h-8 w-8 items-center justify-center rounded-full"
@@ -329,7 +321,7 @@ function GetSelectedDate(event) {
                       </button>
                       <div class="w-1 h-1 mt-1"></div>
                     </div>
-                    <div class="py-1.5">
+                    <div class="py-1.5 flex justify-center items-center">
                       <button
                         type="button"
                         class="text-gray-900 hover:bg-gray-200 flex h-8 w-8 items-center justify-center rounded-full"
@@ -339,7 +331,7 @@ function GetSelectedDate(event) {
                       </button>
                       <div class="w-1 h-1 mt-1"></div>
                     </div>
-                    <div class="py-1.5">
+                    <div class="py-1.5 flex justify-center items-center">
                       <button
                         type="button"
                         class="text-gray-900 hover:bg-gray-200 flex h-8 w-8 items-center justify-center rounded-full"
@@ -349,7 +341,7 @@ function GetSelectedDate(event) {
                       </button>
                       <div class="w-1 h-1 mt-1"></div>
                     </div>
-                    <div class="py-1.5">
+                    <div class="py-1.5 flex justify-center items-center">
                       <button
                         type="button"
                         class="text-gray-900 hover:bg-gray-200 flex h-8 w-8 items-center justify-center rounded-full"
@@ -359,7 +351,7 @@ function GetSelectedDate(event) {
                       </button>
                       <div class="w-1 h-1 mt-1"></div>
                     </div>
-                    <div class="py-1.5">
+                    <div class="py-1.5 flex justify-center items-center">
                       <button
                         type="button"
                         class="text-gray-900 hover:bg-gray-200 flex h-8 w-8 items-center justify-center rounded-full"
@@ -369,7 +361,7 @@ function GetSelectedDate(event) {
                       </button>
                       <div class="w-1 h-1 mt-1"></div>
                     </div>
-                    <div class="py-1.5">
+                    <div class="py-1.5 flex justify-center items-center">
                       <button
                         type="button"
                         class="text-gray-900 hover:bg-gray-200 flex h-8 w-8 items-center justify-center rounded-full"
@@ -379,7 +371,7 @@ function GetSelectedDate(event) {
                       </button>
                       <div class="w-1 h-1 mt-1"></div>
                     </div>
-                    <div class="py-1.5">
+                    <div class="py-1.5 flex justify-center items-center">
                       <button
                         type="button"
                         class="text-gray-900 hover:bg-gray-200 flex h-8 w-8 items-center justify-center rounded-full"
@@ -389,7 +381,7 @@ function GetSelectedDate(event) {
                       </button>
                       <div class="w-1 h-1 mt-1"></div>
                     </div>
-                    <div class="py-1.5">
+                    <div class="py-1.5 flex justify-center items-center">
                       <button
                         type="button"
                         class="text-gray-900 hover:bg-gray-200 flex h-8 w-8 items-center justify-center rounded-full"
@@ -432,8 +424,4 @@ function GetSelectedDate(event) {
     </div>
   </div>
 </template>
-<style>
-body {
-  margin-right: 0;
-}
-</style>
+<style></style>
