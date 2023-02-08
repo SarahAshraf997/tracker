@@ -5,17 +5,50 @@ import Time from "./Time.vue";
 import container from "./container.vue";
 let state = reactive({
   stringDay: "",
+  days: [
+    { date: "", day: "", status: false },
+    { date: "", day: "", status: false },
+    { date: "", day: "", status: false },
+    { date: "2023-02-15", day: "15", status: false },
+    { date: "2023-02-16", day: "16", status: false },
+    { date: "2023-02-17", day: "17", status: false },
+    { date: "2023-02-18", day: "18", status: false },
+    { date: "2023-02-19", day: "19", status: false },
+    { date: "2023-02-20", day: "20", status: false },
+    { date: "2023-02-21", day: "21", status: false },
+    { date: "2023-02-22", day: "22", status: false },
+    { date: "2023-02-23", day: "23", status: false },
+    { date: "2023-02-24", day: "24", status: false },
+    { date: "2023-02-25", day: "25", status: false },
+    { date: "2023-02-26", day: "26", status: false },
+    { date: "2023-02-27", day: "27", status: false },
+    { date: "2023-02-28", day: "28", status: false },
+  ],
+  WeekDays: [
+    { dayName: "Sun", status: false },
+    { dayName: "Mon", status: false },
+    { dayName: "Tue", status: false },
+    { dayName: "Wed", status: false },
+    { dayName: "Thu", status: false },
+    { dayName: "Fri", status: false },
+    { dayName: "Sat", status: false },
+  ],
 });
-function GetSelectedDate(event) {
-  //prints datetime attribute of time tag
-  //console.log(event.target.children[0].getAttribute("datetime"));
-  console.log(event.target);
-  if (event.target.getAttribute("datetime") == null) {
-    state.stringDay = event.target.children[0].getAttribute("datetime");
-    //alert(event.target.children[0].getAttribute("datetime"));
-  } else {
-    state.stringDay = event.target.getAttribute("datetime");
-    //alert(event.target.getAttribute("datetime"));
+function GetSelectedDate(day) {
+  if (day.date == "" && day.day == "") {
+    return;
+  }
+  state.stringDay = day.date;
+  day.status = !day.status;
+  let _dayname = new Date(day.date).toLocaleString("en-us", {
+    weekday: "short",
+  });
+  state.WeekDays.find((element) => element.dayName == _dayname).status = true;
+  if (!day.status) {
+    state.stringDay = "";
+    state.WeekDays.find(
+      (element) => element.dayName == _dayname
+    ).status = false;
   }
 }
 </script>
@@ -53,13 +86,15 @@ function GetSelectedDate(event) {
               <div
                 class="grid bg-blue-900 grid-cols-7 mt-5 text-xs leading-6 text-center text-white"
               >
-                <div>S</div>
-                <div>M</div>
-                <div>T</div>
-                <div>W</div>
-                <div>T</div>
-                <div>F</div>
-                <div>S</div>
+                <div
+                  v-for="_Day in state.WeekDays"
+                  class="flex h-8 w-8 items-center justify-center"
+                >
+                  <p v-if="_Day.status" class="rounded-full px-2 bg-green-500">
+                    {{ _Day.dayName }}
+                  </p>
+                  <p v-else>{{ _Day.dayName }}</p>
+                </div>
               </div>
             </div>
 
@@ -114,143 +149,25 @@ function GetSelectedDate(event) {
                   >
                     <!-- start col m4 48ala -->
 
-                    <div class="py-1.5 flex justify-center items-center">
+                    <div
+                      v-for="_data in state.days"
+                      class="py-1.5 flex justify-center items-center"
+                    >
                       <button
+                        v-if="_data.status"
                         type="button"
-                        class="text-gray-900 hover:bg-gray-200 flex h-8 w-8 items-center justify-center rounded-full"
-                        @click="GetSelectedDate"
+                        class="text-white bg-green-500 hover:bg-gray-200 flex h-8 w-8 items-center justify-center rounded-full"
+                        @click="GetSelectedDate(_data)"
                       >
-                        <time datetime="2023-02-15">15</time>
+                        <time :datetime="_data.date">{{ _data.day }}</time>
                       </button>
-                      <div class="w-1 h-1 mt-1"></div>
-                    </div>
-                    <div class="py-1.5 flex justify-center items-center">
                       <button
+                        v-else
                         type="button"
                         class="text-gray-900 hover:bg-gray-200 flex h-8 w-8 items-center justify-center rounded-full"
-                        @click="GetSelectedDate"
+                        @click="GetSelectedDate(_data)"
                       >
-                        <time datetime="2023-02-16">16</time>
-                      </button>
-                      <div class="w-1 h-1 mt-1"></div>
-                    </div>
-                    <div class="py-1.5 flex justify-center items-center">
-                      <button
-                        type="button"
-                        class="text-gray-900 hover:bg-gray-200 flex h-8 w-8 items-center justify-center rounded-full"
-                        @click="GetSelectedDate"
-                      >
-                        <time datetime="2023-02-17">17</time>
-                      </button>
-                      <div class="w-1 h-1 mt-1"></div>
-                    </div>
-                    <div class="py-1.5 flex justify-center items-center">
-                      <button
-                        type="button"
-                        class="text-gray-900 hover:bg-gray-200 flex h-8 w-8 items-center justify-center rounded-full"
-                        @click="GetSelectedDate"
-                      >
-                        <time datetime="2023-02-18">18</time>
-                      </button>
-                      <div class="w-1 h-1 mt-1"></div>
-                    </div>
-                    <div class="py-1.5 flex justify-center items-center">
-                      <button
-                        type="button"
-                        class="text-gray-900 hover:bg-gray-200 flex h-8 w-8 items-center justify-center rounded-full"
-                        @click="GetSelectedDate"
-                      >
-                        <time datetime="2023-02-19">19</time>
-                      </button>
-                      <div class="w-1 h-1 mt-1"></div>
-                    </div>
-                    <div class="py-1.5 flex justify-center items-center">
-                      <button
-                        type="button"
-                        class="text-gray-900 hover:bg-gray-200 flex h-8 w-8 items-center justify-center rounded-full"
-                        @click="GetSelectedDate"
-                      >
-                        <time datetime="2023-02-20">20</time>
-                      </button>
-                      <div class="w-1 h-1 mt-1"></div>
-                    </div>
-                    <div class="py-1.5 flex justify-center items-center">
-                      <button
-                        type="button"
-                        class="text-gray-900 hover:bg-gray-200 flex h-8 w-8 items-center justify-center rounded-full"
-                        @click="GetSelectedDate"
-                      >
-                        <time datetime="2023-02-21">21</time>
-                      </button>
-                      <div class="w-1 h-1 mt-1"></div>
-                    </div>
-                    <div class="py-1.5 flex justify-center items-center">
-                      <button
-                        type="button"
-                        class="text-gray-900 hover:bg-gray-200 flex h-8 w-8 items-center justify-center rounded-full"
-                        @click="GetSelectedDate"
-                      >
-                        <time datetime="2023-02-22">22</time>
-                      </button>
-                      <div class="w-1 h-1 mt-1"></div>
-                    </div>
-                    <div class="py-1.5 flex justify-center items-center">
-                      <button
-                        type="button"
-                        class="text-gray-900 hover:bg-gray-200 flex h-8 w-8 items-center justify-center rounded-full"
-                        @click="GetSelectedDate"
-                      >
-                        <time datetime="2023-02-23">23</time>
-                      </button>
-                      <div class="w-1 h-1 mt-1"></div>
-                    </div>
-                    <div class="py-1.5 flex justify-center items-center">
-                      <button
-                        type="button"
-                        class="text-gray-900 hover:bg-gray-200 flex h-8 w-8 items-center justify-center rounded-full"
-                        @click="GetSelectedDate"
-                      >
-                        <time datetime="2023-02-24">24</time>
-                      </button>
-                      <div class="w-1 h-1 mt-1"></div>
-                    </div>
-                    <div class="py-1.5 flex justify-center items-center">
-                      <button
-                        type="button"
-                        class="text-gray-900 hover:bg-gray-200 flex h-8 w-8 items-center justify-center rounded-full"
-                        @click="GetSelectedDate"
-                      >
-                        <time datetime="2023-02-25">25</time>
-                      </button>
-                      <div class="w-1 h-1 mt-1"></div>
-                    </div>
-                    <div class="py-1.5 flex justify-center items-center">
-                      <button
-                        type="button"
-                        class="text-gray-900 hover:bg-gray-200 flex h-8 w-8 items-center justify-center rounded-full"
-                        @click="GetSelectedDate"
-                      >
-                        <time datetime="2023-02-26">26</time>
-                      </button>
-                      <div class="w-1 h-1 mt-1"></div>
-                    </div>
-                    <div class="py-1.5 flex justify-center items-center">
-                      <button
-                        type="button"
-                        class="text-gray-900 hover:bg-gray-200 flex h-8 w-8 items-center justify-center rounded-full"
-                        @click="GetSelectedDate"
-                      >
-                        <time datetime="2023-02-27">27</time>
-                      </button>
-                      <div class="w-1 h-1 mt-1"></div>
-                    </div>
-                    <div class="py-1.5 flex justify-center items-center">
-                      <button
-                        type="button"
-                        class="text-gray-900 hover:bg-gray-200 flex h-8 w-8 items-center justify-center rounded-full"
-                        @click="GetSelectedDate"
-                      >
-                        <time datetime="2023-02-28">28</time>
+                        <time :datetime="_data.date">{{ _data.day }}</time>
                       </button>
                       <div class="w-1 h-1 mt-1"></div>
                     </div>
