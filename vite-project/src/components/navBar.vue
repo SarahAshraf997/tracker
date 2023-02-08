@@ -1,10 +1,19 @@
 <script setup>
-import { reactive } from "vue";
+import { reactive, onMounted } from "vue";
 import inputForm from "./inputForm.vue";
 import Time from "./Time.vue";
 import container from "./container.vue";
+import { useStore } from "vuex";
+
+const store = useStore();
 let state = reactive({
   stringDay: "",
+  time: "",
+  userdetails: {
+    name: "",
+    email: "",
+    phone: "",
+  },
   days: [
     { date: "", day: "", status: false },
     { date: "", day: "", status: false },
@@ -34,6 +43,47 @@ let state = reactive({
     { dayName: "Sat", status: false },
   ],
 });
+onMounted(() => {
+  getappontment();
+  state.time = store.dispatch("getTime");
+  console.log(state.time);
+});
+function getappontment() {
+  store
+    .dispatch("getAllApointments")
+    .then((res) => {
+      console.log(res);
+    })
+    .catch((err) => {
+      console.log(err);
+    });
+}
+function createAppointment() {
+  store
+    .dispatch("createAppointment", {
+      date: state.stringDay,
+      time: "12:00",
+      name: "test",
+      email: "",
+      phone: "",
+    })
+    .then((res) => {
+      console.log(res);
+    })
+    .catch((err) => {
+      console.log(err);
+    });
+}
+function time() {
+  store
+    .dispatch("getTime")
+    .then((res) => {
+      console.log(res);
+    })
+    .catch((err) => {
+      console.log(err);
+    });
+}
 function GetSelectedDate(day) {
   if (day.date == "" && day.day == "") {
     return;
@@ -46,22 +96,14 @@ function GetSelectedDate(day) {
   state.WeekDays.find((element) => element.dayName == _dayname).status = true;
   if (!day.status) {
     state.stringDay = "";
-    state.WeekDays.find(
-      (element) => element.dayName == _dayname
-    ).status = false;
+    state.WeekDays.find((element) => element.dayName == _dayname).status = false;
   }
 }
 </script>
 <template>
-  <h2
-    class="flex-auto font-serif font-semibold text-gray-500 text-center mb-3 text-xl"
-  >
-    What Day is Best For You?
-  </h2>
+  <h2 class="flex-auto font-serif font-semibold text-gray-500 text-center mb-3 text-xl">What Day is Best For You?</h2>
   <div class="flex justify-center pt-7 pb-8 m-8">
-    <div
-      class="w-1/2 border border-color-red px-4 drop-shadow-xl bg-cyan-500 shadow-lg shadow-gray-900 rounded-t-lg rounded-b-lg"
-    >
+    <div class="w-1/2 border border-color-red px-4 drop-shadow-xl bg-cyan-500 shadow-lg shadow-gray-900 rounded-t-lg rounded-b-lg">
       <div class="pt-16 px-10">
         <inputForm></inputForm>
       </div>
@@ -73,23 +115,12 @@ function GetSelectedDate(day) {
             <!-- feb+buttons -->
 
             <div class="flex items-center">
-              <h2
-                class="flex-auto font-serif font-semibold text-gray-500 text-center mb-3 text-xl"
-              >
-                What Time Works?
-              </h2>
+              <h2 class="flex-auto font-serif font-semibold text-gray-500 text-center mb-3 text-xl">What Time Works?</h2>
             </div>
             <!-- days at the top -->
-            <div
-              class="w-full px-4 drop-shadow-xl bg-blue-900 shadow-lg shadow-gray-900 rounded-t-lg rounded-b-lg"
-            >
-              <div
-                class="grid bg-blue-900 grid-cols-7 mt-5 text-xs leading-6 text-center text-white"
-              >
-                <div
-                  v-for="_Day in state.WeekDays"
-                  class="flex h-8 w-8 items-center justify-center"
-                >
+            <div class="w-full px-4 drop-shadow-xl bg-blue-900 shadow-lg shadow-gray-900 rounded-t-lg rounded-b-lg">
+              <div class="grid bg-blue-900 grid-cols-7 mt-5 text-xs leading-6 text-center text-white">
+                <div v-for="_Day in state.WeekDays" class="flex h-8 w-8 items-center justify-center">
                   <p v-if="_Day.status" class="rounded-full px-2 bg-green-500">
                     {{ _Day.dayName }}
                   </p>
@@ -99,74 +130,31 @@ function GetSelectedDate(day) {
             </div>
 
             <!-- GRID OF DAYS -->
-            <div
-              class="w-full px-0 drop-shadow-xl bg-cyan-500 shadow-lg shadow-gray-900 rounded-t-lg rounded-b-lg"
-            >
+            <div class="w-full px-0 drop-shadow-xl bg-cyan-500 shadow-lg shadow-gray-900 rounded-t-lg rounded-b-lg">
               <div class="mt-0 gap-0 justify-items-stretch">
                 <div class="flex justify-between pt-3">
-                  <button
-                    type="button"
-                    class="bg-blue-900 -my-1.5 flex flex-none bg-gray-900 hover:bg-gray-200 items-center justify-center p-1.5 text-white hover:text-gray-500 rounded-full"
-                  >
+                  <button type="button" class="bg-blue-900 -my-1.5 flex flex-none bg-gray-900 hover:bg-gray-200 items-center justify-center p-1.5 text-white hover:text-gray-500 rounded-full">
                     <span class="sr-only">Previous month</span
-                    ><svg
-                      xmlns="http://www.w3.org/2000/svg"
-                      viewBox="0 0 20 20"
-                      fill="currentColor"
-                      aria-hidden="true"
-                      class="w-5 h-5"
-                    >
-                      <path
-                        fill-rule="evenodd"
-                        d="M12.707 5.293a1 1 0 010 1.414L9.414 10l3.293 3.293a1 1 0 01-1.414 1.414l-4-4a1 1 0 010-1.414l4-4a1 1 0 011.414 0z"
-                        clip-rule="evenodd"
-                      ></path>
+                    ><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true" class="w-5 h-5">
+                      <path fill-rule="evenodd" d="M12.707 5.293a1 1 0 010 1.414L9.414 10l3.293 3.293a1 1 0 01-1.414 1.414l-4-4a1 1 0 010-1.414l4-4a1 1 0 011.414 0z" clip-rule="evenodd"></path>
                     </svg>
                   </button>
-                  <button
-                    type="button"
-                    class="bg-blue-900 -my-1.5 flex flex-none bg-gray-900 hover:bg-gray-200 items-center justify-center p-1.5 text-white hover:text-gray-500 rounded-full"
-                  >
+                  <button type="button" class="bg-blue-900 -my-1.5 flex flex-none bg-gray-900 hover:bg-gray-200 items-center justify-center p-1.5 text-white hover:text-gray-500 rounded-full">
                     <span class="sr-only">Next month</span
-                    ><svg
-                      xmlns="http://www.w3.org/2000/svg"
-                      viewBox="0 0 20 20"
-                      fill="currentColor"
-                      aria-hidden="true"
-                      class="w-5 h-5"
-                    >
-                      <path
-                        fill-rule="evenodd"
-                        d="M7.293 14.707a1 1 0 010-1.414L10.586 10 7.293 6.707a1 1 0 011.414-1.414l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414 0z"
-                        clip-rule="evenodd"
-                      ></path>
+                    ><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true" class="w-5 h-5">
+                      <path fill-rule="evenodd" d="M7.293 14.707a1 1 0 010-1.414L10.586 10 7.293 6.707a1 1 0 011.414-1.414l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414 0z" clip-rule="evenodd"></path>
                     </svg>
                   </button>
                 </div>
                 <div class="justify-self-center">
-                  <div
-                    class="grid grid-cols-7 mt-2 text-sm text-xs leading-6 text-center"
-                  >
+                  <div class="grid grid-cols-7 mt-2 text-sm text-xs leading-6 text-center">
                     <!-- start col m4 48ala -->
 
-                    <div
-                      v-for="_data in state.days"
-                      class="py-1.5 flex justify-center items-center"
-                    >
-                      <button
-                        v-if="_data.status"
-                        type="button"
-                        class="text-white bg-green-500 hover:bg-gray-200 flex h-8 w-8 items-center justify-center rounded-full"
-                        @click="GetSelectedDate(_data)"
-                      >
+                    <div v-for="_data in state.days" class="py-1.5 flex justify-center items-center">
+                      <button v-if="_data.status" type="button" class="text-white bg-green-500 hover:bg-gray-200 flex h-8 w-8 items-center justify-center rounded-full" @click="GetSelectedDate(_data)">
                         <time :datetime="_data.date">{{ _data.day }}</time>
                       </button>
-                      <button
-                        v-else
-                        type="button"
-                        class="text-gray-900 hover:bg-gray-200 flex h-8 w-8 items-center justify-center rounded-full"
-                        @click="GetSelectedDate(_data)"
-                      >
+                      <button v-else type="button" class="text-gray-900 hover:bg-gray-200 flex h-8 w-8 items-center justify-center rounded-full" @click="GetSelectedDate(_data)">
                         <time :datetime="_data.date">{{ _data.day }}</time>
                       </button>
                       <div class="w-1 h-1 mt-1"></div>
@@ -193,9 +181,10 @@ function GetSelectedDate(day) {
             <div class="col-span-2 pt-10">
               <button
                 type="submit"
+                @click="createAppointment(state)"
                 class="justify-self-center w-full ocus:outline-none text-white bg-green-700 hover:bg-green-800 focus:ring-4 focus:ring-green-300 font-medium rounded-lg text-sm px-5 py-3.5 mr-2 mb-2 dark:bg-green-600 dark:hover:bg-green-700 dark:focus:ring-green-800"
               >
-                Register new account
+                Submit
               </button>
             </div>
           </div>
