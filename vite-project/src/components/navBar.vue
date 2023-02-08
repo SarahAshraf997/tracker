@@ -20,9 +20,14 @@ function GetSelectedDate(event) {
 }
 </script>
 <template>
-  <div class="flex justify-center pt-16 pb-8 m-8">
+  <h2
+    class="flex-auto font-serif font-semibold text-gray-500 text-center mb-3 text-xl"
+  >
+    What Day is Best For You?
+  </h2>
+  <div class="flex justify-center pt-7 pb-8 m-8">
     <div
-      class="w-1/2 px-4 ring-2 ring-gray-900 drop-shadow-xl bg-cyan-500 shadow-lg shadow-gray-900 rounded-t-lg rounded-b-lg"
+      class="w-1/2 border border-color-red px-4 drop-shadow-xl bg-cyan-500 shadow-lg shadow-gray-900 rounded-t-lg rounded-b-lg"
     >
       <div class="pt-16 px-10">
         <inputForm></inputForm>
@@ -43,7 +48,7 @@ function GetSelectedDate(event) {
             </div>
             <!-- days at the top -->
             <div
-              class="w-full px-4 ring-2 ring-gray-900 drop-shadow-xl bg-blue-900 shadow-lg shadow-gray-900 rounded-t-lg rounded-b-lg"
+              class="w-full px-4 drop-shadow-xl bg-blue-900 shadow-lg shadow-gray-900 rounded-t-lg rounded-b-lg"
             >
               <div
                 class="grid bg-blue-900 grid-cols-7 mt-5 text-xs leading-6 text-center text-white"
@@ -60,7 +65,7 @@ function GetSelectedDate(event) {
 
             <!-- GRID OF DAYS -->
             <div
-              class="w-full px-0 ring-2 ring-gray-900 drop-shadow-xl bg-cyan-500 shadow-lg shadow-gray-900 rounded-t-lg rounded-b-lg"
+              class="w-full px-0 drop-shadow-xl bg-cyan-500 shadow-lg shadow-gray-900 rounded-t-lg rounded-b-lg"
             >
               <div class="mt-0 gap-0 justify-items-stretch">
                 <div class="flex justify-between pt-3">
@@ -108,149 +113,7 @@ function GetSelectedDate(event) {
                     class="grid grid-cols-7 mt-2 text-sm text-xs leading-6 text-center"
                   >
                     <!-- start col m4 48ala -->
-                    <div class="py-1.5 flex justify-center items-center">
-                      <button
-                        type="button"
-                        class="text-gray-900 hover:bg-gray-200 flex h-8 w-8 items-center justify-center rounded-full"
-                        @click="GetSelectedDate"
-                      >
-                        <time datetime="2023-02-01">1</time>
-                      </button>
-                      <div
-                        class="w-1 h-1 mt-1 __web-inspector-hide-shortcut__"
-                      ></div>
-                    </div>
-                    <div class="py-1.5 flex justify-center items-center">
-                      <button
-                        type="button"
-                        class="text-gray-900 hover:bg-gray-200 flex h-8 w-8 items-center justify-center rounded-full"
-                        @click="GetSelectedDate"
-                      >
-                        <time datetime="2023-02-02">2</time>
-                      </button>
-                      <div class="w-1 h-1 mt-1"></div>
-                    </div>
-                    <div class="py-1.5 flex justify-center items-center">
-                      <button
-                        type="button"
-                        class="text-gray-900 hover:bg-gray-200 flex h-8 w-8 items-center justify-center rounded-full"
-                        @click="GetSelectedDate"
-                      >
-                        <time datetime="2023-02-03">3</time>
-                      </button>
-                      <div class="w-1 h-1 mt-1"></div>
-                    </div>
-                    <div class="py-1.5 flex justify-center items-center">
-                      <button
-                        type="button"
-                        class="text-gray-900 hover:bg-gray-200 flex h-8 w-8 items-center justify-center rounded-full"
-                        @click="GetSelectedDate"
-                      >
-                        <time datetime="2023-02-04">4</time>
-                      </button>
-                      <div class="w-1 h-1 mt-1"></div>
-                    </div>
-                    <div class="py-1.5 flex justify-center items-center">
-                      <button
-                        type="button"
-                        class="text-gray-900 hover:bg-gray-200 flex h-8 w-8 items-center justify-center rounded-full"
-                        @click="GetSelectedDate"
-                      >
-                        <time datetime="2023-02-05">5</time>
-                      </button>
-                      <div class="w-1 h-1 mt-1"></div>
-                    </div>
-                    <div class="py-1.5 flex justify-center items-center">
-                      <!-- background change -->
-                      <button
-                        type="button"
-                        class="text-black bg-cyan-500 font-semibold flex h-8 w-8 items-center justify-center rounded-full"
-                        @click="GetSelectedDate"
-                      >
-                        <time datetime="2023-02-06">6</time>
-                      </button>
-                      <div class="w-1 h-1 mt-1"></div>
-                    </div>
-                    <div class="py-1.5 flex justify-center items-center">
-                      <button
-                        type="button"
-                        class="text-gray-900 hover:bg-gray-200 flex h-8 w-8 items-center justify-center rounded-full"
-                        @click="GetSelectedDate"
-                      >
-                        <time datetime="2023-02-07">7</time>
-                      </button>
-                      <div class="w-1 h-1 mt-1"></div>
-                    </div>
-                    <div class="py-1.5 flex justify-center items-center">
-                      <button
-                        type="button"
-                        class="text-gray-900 hover:bg-gray-200 flex h-8 w-8 items-center justify-center rounded-full"
-                        @click="GetSelectedDate"
-                      >
-                        <time datetime="2023-02-08">8</time>
-                      </button>
-                      <div class="w-1 h-1 mt-1"></div>
-                    </div>
-                    <div class="py-1.5 flex justify-center items-center">
-                      <button
-                        type="button"
-                        class="text-gray-900 hover:bg-gray-200 flex h-8 w-8 items-center justify-center rounded-full"
-                        @click="GetSelectedDate"
-                      >
-                        <time datetime="2023-02-09">9</time>
-                      </button>
-                      <div class="w-1 h-1 mt-1"></div>
-                    </div>
-                    <div class="py-1.5 flex justify-center items-center">
-                      <button
-                        type="button"
-                        class="text-gray-900 hover:bg-gray-200 flex h-8 w-8 items-center justify-center rounded-full"
-                        @click="GetSelectedDate"
-                      >
-                        <time datetime="2023-02-10">10</time>
-                      </button>
-                      <div class="w-1 h-1 mt-1"></div>
-                    </div>
-                    <div class="py-1.5 flex justify-center items-center">
-                      <button
-                        type="button"
-                        class="text-gray-900 hover:bg-gray-200 flex h-8 w-8 items-center justify-center rounded-full"
-                        @click="GetSelectedDate"
-                      >
-                        <time datetime="2023-02-11">11</time>
-                      </button>
-                      <div class="w-1 h-1 mt-1"></div>
-                    </div>
-                    <div class="py-1.5 flex justify-center items-center">
-                      <button
-                        type="button"
-                        class="text-gray-900 hover:bg-gray-200 flex h-8 w-8 items-center justify-center rounded-full"
-                        @click="GetSelectedDate"
-                      >
-                        <time datetime="2023-02-12">12</time>
-                      </button>
-                      <div class="w-1 h-1 mt-1"></div>
-                    </div>
-                    <div class="py-1.5 flex justify-center items-center">
-                      <button
-                        type="button"
-                        class="text-gray-900 hover:bg-gray-200 flex h-8 w-8 items-center justify-center rounded-full"
-                        @click="GetSelectedDate"
-                      >
-                        <time datetime="2023-02-13">13</time>
-                      </button>
-                      <div class="w-1 h-1 mt-1"></div>
-                    </div>
-                    <div class="py-1.5 flex justify-center items-center">
-                      <button
-                        type="button"
-                        class="text-gray-900 hover:bg-gray-200 flex h-8 w-8 items-center justify-center rounded-full"
-                        @click="GetSelectedDate"
-                      >
-                        <time datetime="2023-02-14">14</time>
-                      </button>
-                      <div class="w-1 h-1 mt-1"></div>
-                    </div>
+
                     <div class="py-1.5 flex justify-center items-center">
                       <button
                         type="button"

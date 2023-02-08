@@ -10,7 +10,15 @@ defineProps({
       <div class="col-span-2">
         <p class="text-blue-700 font-serif">The next date has been set:</p>
         <p v-if="selectedDate.length > 0" class="text-gray-400">
-          At 4:30 on {{ selectedDate }}
+          At 4:30 on
+          {{
+            new Date(selectedDate).toLocaleString("en-us", {
+              weekday: "long",
+              day: "numeric",
+              month: "numeric",
+              year: "numeric",
+            })
+          }}
         </p>
       </div>
 
